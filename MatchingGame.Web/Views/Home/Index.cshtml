@@ -1,0 +1,70 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+       // <p>welcome to the game</p>
+        <div>
+            <form action="Home" method="post" class="form-control-sm">
+                <div>
+                    <select class="form-control" id="CountryName" name="CountryName">
+                        @foreach (var country in Model.countries)
+                        {
+                            <option id="ItemTwo">@country.CountryName</option>
+                        }
+                    </select>
+                </div>
+                <div>
+                    <select class="form-control" id="CountryName" name="CountryName">
+                        @foreach (var capital in Model.capitals)
+                        {
+                            <option id="ItemOne">@capital.CapitalName</option>
+                        }
+
+                    </select>
+
+                </div>
+
+               
+
+               
+                <div>
+                    <button id="answer" onclick="myFunction()" class="btn-primary" type="submit" value="submit">Submit Answer</button>
+                </div>
+            </form>
+            <div>
+                <div>
+                    <ol id="list">
+                    </ol>
+                </div>
+            </div>
+    </div>
+
+        
+    
+</div>
+
+    <script>
+
+
+        function myFunction() {
+
+            
+            var answerOne = document.getElementById("ItemOne")
+            var answerTwo = document.getElementById("ItemTwo")
+            
+
+            if (answerOne == answerTwo)  {
+                alert("Your answer is correct");
+
+            } else {
+                alert("your answer is incorrect")
+            }
+            
+        }
+
+
+
+    </script>

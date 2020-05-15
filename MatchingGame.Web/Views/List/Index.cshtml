@@ -1,0 +1,72 @@
+﻿@model ListViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <div>
+            <form action="List/Index" method="post" class="form-control-sm">
+                <div>
+                    <select class="form-control" id="CountryName" name="CountryName">
+                        @foreach (var country in Model.countries)
+                        {
+                            <option>@country.CountryName</option>
+                        }
+                    </select>
+                </div>
+                <div>
+                    <select class="form-control" id="CountryName" name="CountryName">
+                        @foreach (var capital in Model.capitals)
+                        {
+                            <option>@capital.CapitalName</option>
+                        }
+                    </select>
+
+                </div>
+                
+                <div>
+                    <button class="btn-primary" type="submit" value="submit">Create List Item</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <table class="table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.countries)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.capitals)
+                        </th>
+                     
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.countries)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CountryName)
+                            </td>
+                            
+                            <td>
+                                <a asp-action="AddOrEdit" ><i class="fa fa-marker fa-lg"></i></a>
+                                
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            
+
+        </div>
+
+    </div>
+
+
+<script>
+   
+
+
+</script>
