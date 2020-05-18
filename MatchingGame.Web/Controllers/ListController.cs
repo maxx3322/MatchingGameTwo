@@ -17,9 +17,9 @@ namespace MatchingGame.Web.Controllers
         {
             _matchingGameRepository = matchingGameRepository ??
                  throw new ArgumentNullException(nameof(matchingGameRepository));
-                 }
+        }
 
-            [HttpGet]
+        [HttpGet]
         public ActionResult Index()
         {
 
@@ -31,7 +31,7 @@ namespace MatchingGame.Web.Controllers
             listModel.countries = _matchingGameRepository.GetCountries();
             listModel.capitals = _matchingGameRepository.GetCapitals();
             listModel.Continents = _matchingGameRepository.GetContinents();
-            
+
             return View(listModel);
         }
 

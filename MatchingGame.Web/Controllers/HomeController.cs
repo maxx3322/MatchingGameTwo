@@ -28,17 +28,21 @@ namespace MatchingGame.Web.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-
-
             //Continue to play around with different view models until we can return all three repositories. 
 
             ViewBag.Message = "Welcome to the Capital Game!";
             HomeViewModel mymodel = new HomeViewModel();
-            mymodel.countries = _matchingGameRepository.GetCountries();
-            mymodel.capitals = _matchingGameRepository.GetCapitals();
-            mymodel.Continents = _matchingGameRepository.GetContinents();
-            mymodel.CountryName = _matchingGameRepository.GetCountryByName();
-           
+            mymodel.countries = _matchingGameRepository.GetCountries().ToList();
+            mymodel.capitals = _matchingGameRepository.GetCapitals().ToList();
+            //mymodel.Continents = _matchingGameRepository.GetContinents();
+
+            var country = _matchingGameRepository.GetCountryByName("usa");
+            mymodel.CountryName = country.CountryName;
+
+            var random = new Random();
+
+            mymodel.SelectedCountry = mymodel.countries[random.Next(0, mymodel.countries.Count() - 1)];
+
             return View(mymodel);
         }
 
@@ -50,8 +54,6 @@ namespace MatchingGame.Web.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-
-
 
         public IActionResult Privacy()
         {

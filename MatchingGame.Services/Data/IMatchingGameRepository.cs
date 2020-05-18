@@ -10,8 +10,13 @@ namespace MatchingGame.Services.Data
     public interface IMatchingGameRepository
     {
         IEnumerable<Country> GetCountries();
+
         Country GetCountry(int CountryId);
+
         Country GetCountryByName(string countryName);
+        
+
+
         Country AddCountry(Country country);
 
         IEnumerable<Continent> GetContinents();
