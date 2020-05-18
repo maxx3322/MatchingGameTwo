@@ -9,11 +9,14 @@
         <div>
             <form action="Home" method="post" class="form-control-sm">
                 <div>
+
+                    
+
                     <select class="form-control" id="CountryName" name="CountryName">
-                        @foreach (var country in Model.countries)
-                        {
-                            <option id="ItemTwo">@country.CountryName</option>
-                        }
+                       
+                        
+                            <option id="ItemTwo"></option>
+                        
                     </select>
                 </div>
                 <div>
@@ -51,10 +54,10 @@
 
         function myFunction() {
 
-            
+
             var answerOne = document.getElementById("ItemOne")
             var answerTwo = document.getElementById("ItemTwo")
-            
+
 
             if (answerOne == answerTwo)  {
                 alert("Your answer is correct");
@@ -62,8 +65,28 @@
             } else {
                 alert("your answer is incorrect")
             }
-            
+
         }
+
+        function random_item(item) {
+
+
+            var arrayOfArrays = @foreach (var capital in Model.capitals)
+            {
+
+               @capital.CapitalName;
+
+            } 
+
+            
+          
+
+            
+
+}
+        
+
+
 
 
 

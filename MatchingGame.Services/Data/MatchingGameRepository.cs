@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace MatchingGame.Services.Data
 {
@@ -47,9 +48,10 @@ namespace MatchingGame.Services.Data
             return _matchingGameContext.Country.FirstOrDefault();
         }
 
-        public Country GetCountryByName(string CountryName)
+        public Country GetCountryByName(string countryName)
         {
-            return _matchingGameContext.Country.FirstOrDefault();
+            return _matchingGameContext.Country
+                .FirstOrDefault(p => p.CountryName == countryName);
         }
 
         public Country AddCountry(Country country)

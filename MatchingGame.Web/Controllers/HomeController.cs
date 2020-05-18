@@ -37,6 +37,8 @@ namespace MatchingGame.Web.Controllers
             mymodel.countries = _matchingGameRepository.GetCountries();
             mymodel.capitals = _matchingGameRepository.GetCapitals();
             mymodel.Continents = _matchingGameRepository.GetContinents();
+            mymodel.CountryName = _matchingGameRepository.GetCountryByName();
+           
             return View(mymodel);
         }
 

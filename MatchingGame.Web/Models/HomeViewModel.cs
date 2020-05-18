@@ -8,8 +8,12 @@ namespace MatchingGame.Web.Models
 {
     public class HomeViewModel
     {
-       public IEnumerable<Country> countries { get; set; }
+        public IEnumerable<Country> countries { get; set; }
         public IEnumerable<Capital> capitals { get; set; }
         public IEnumerable<Continent> Continents { get; set; }
+
+        public string CountryName {get; set;}
+
+
     }
 }

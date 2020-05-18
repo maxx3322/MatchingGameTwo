@@ -61,5 +61,9 @@
     <Build Include="Country.sql" />
     <Build Include="Capital.sql" />
     <Build Include="Continent.sql" />
+    <Build Include="CountryMatch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="MatchingGame.Database.refactorlog" />
   </ItemGroup>
 </Project>

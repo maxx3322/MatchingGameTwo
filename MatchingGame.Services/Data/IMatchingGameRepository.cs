@@ -11,7 +11,7 @@ namespace MatchingGame.Services.Data
     {
         IEnumerable<Country> GetCountries();
         Country GetCountry(int CountryId);
-        Country GetCountryByName(string CountryName);
+        Country GetCountryByName(string countryName);
         Country AddCountry(Country country);
 
         IEnumerable<Continent> GetContinents();
